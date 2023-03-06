@@ -1,6 +1,6 @@
 import pytest
 from app import * 
-from unittest import TestCas
+from unittest import TestCase
 
 
 class TestApp(TestCase):

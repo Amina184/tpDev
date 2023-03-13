@@ -29,6 +29,11 @@ jobs:
       - name: Run tests
         run: |
           python -m pytest
+      
+      - name: Python Checkstyle
+        timeout-minutes: 20
+        run: |
+          pylint
 
       - name: Send GitHub Action trigger data to Slack workflow
         id: slack
@@ -37,9 +42,5 @@ jobs:
               SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
 
-      - name: Python Checkstyle
-        timeout-minutes: 20
-        run: |
-          pylint
       
       
